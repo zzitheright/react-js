@@ -1,8 +1,10 @@
-// 기명 함수
-function Header() {
+import Nav from "./Nav"
+
+function Header({ title, nav }) {
     return (
         <header>
-            <h1>logo</h1>
+            <h1>{title}</h1>
+            <Nav nav={nav} />
         </header>
     )
 }

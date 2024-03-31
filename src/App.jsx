@@ -1,35 +1,25 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Hello, { Test, World } from "./module";
-import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
-import Nav from "./components/layout/Nav";
-import Home from "./views/Home";
+import Header from "./components/layout/Header"
+import Home from "./components/views/home/Home";
+import Event from "./grammar/Event";
 
 function App() {
 
-  const listArr = [
-    {
-      title: "Home",
-      des: "홈화면"
-    },
-    {
-      title: "About",
-      des: "소개 페이지"
-    },
+  const navArr = [
+    { title: 'Home' }, { title: 'About' }, { title: 'Signin' }
   ]
 
   return (
-    <>
-      <Header />
-      <Nav />
-      {listArr.map((item, index) => (
-        <Home key={index} title={item.title} des={item.des} />
-      ))}
-      {/* <Home title="Home" des="홈 화면" />
-      <Home title="About" des="소개 페이지" /> */}
-      {/* <Footer /> */}
-    </>
+    <div className="wrap">
+      <Event />
+      <Header title="dashboard" nav={navArr} />
+
+      <Home title="home" desc="홈 화면" />
+      <Home title="about" desc="소개 화면" />
+      <Home title="signin" desc="로그인 화면" />
+      
+      <Footer />      
+    </div>
   );
 }
 
